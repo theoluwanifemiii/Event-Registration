@@ -1,6 +1,29 @@
 import React, { useState, useEffect } from 'react';
 import { Ticket, Users, DollarSign, CheckCircle, Clock, Download, Lock, LogOut, Mail, QrCode, Check, X } from 'lucide-react';
 
+// Extend Window interface for custom storage
+declare global {
+  interface Window {
+    storage: {
+      get: (key: string) => Promise<{ value: string } | null>;
+      set: (key: string, value: string) => Promise<void>;
+    };
+  }
+}
+
+// Initialize window.storage with localStorage fallback
+if (typeof window !== 'undefined' && !window.storage) {
+  window.storage = {
+    get: async (key: string) => {
+      const value = localStorage.getItem(key);
+      return value ? { value } : null;
+    },
+    set: async (key: string, value: string) => {
+      localStorage.setItem(key, value);
+    },
+  };
+}
+
 // Types
 interface Registration {
   id: string;

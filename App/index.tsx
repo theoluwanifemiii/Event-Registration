@@ -1,10 +1,10 @@
-import { View, ScrollView } from 'react-native';
+import '../global.css';
 import EventRegistrationApp from '@/components/EventRegistrationApp';
 
 export default function Index() {
   return (
-    <View className="flex-1">
+    <div className="flex-1">
       <EventRegistrationApp />
-    </View>
+    </div>
   );
 }

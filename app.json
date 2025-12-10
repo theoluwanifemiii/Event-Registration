@@ -1,0 +1,11 @@
+{
+      "expo": {
+        "name": "event-registration",
+        "slug": "event-registration",
+
+        "plugins": [
+          "expo-router"
+        ]
+      
+      }
+    }
