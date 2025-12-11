@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import '../utils/storage';
 import { Ticket, Users, DollarSign, CheckCircle, Clock, Download, Lock, LogOut, Mail, QrCode, Check, X } from 'lucide-react';
 
 interface Registration {
