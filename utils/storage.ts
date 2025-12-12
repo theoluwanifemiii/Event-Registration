@@ -21,7 +21,12 @@
        },
        set: async (key: string, value: string) => {
          try {
-           localStorage.setItem(key, value);
+           localStorage.setItem(key, value);          {
+            "compilerOptions": {
+              "lib": ["ES5", "ES2015", "DOM"],
+              // ...rest of your config
+            }
+          }
          } catch (error) {
            console.error('Storage set error:', error);
          }
